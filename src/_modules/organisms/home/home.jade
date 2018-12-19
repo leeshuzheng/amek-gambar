@@ -1,0 +1,13 @@
+mixin home(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  
+  .home.page.show
+    .home__instructions
+      h1
+        | TOUCH TO
+        span OUTDO THE ORIGINAL
+        
+    .home__button
+      img(src="../images/camera.png")

@@ -1,0 +1,64 @@
+// choose-past styles
+.choose-past {
+
+  &__instructions {
+    color: $beige;
+
+    text-align: center;
+
+    position: absolute;
+
+    @include horizontal-center();
+
+    top: 450px;
+
+
+    span {
+      display: block;
+
+    }
+  }
+
+  &__label {
+    position: absolute;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: $white;
+
+    h1,p {
+      margin: 0;
+    }
+  }
+
+  &__choices {
+    white-space: nowrap;
+    width: 100%;
+
+    position: absolute;
+    top: 550px;
+
+    padding: 0 75px;
+  }
+
+  &__inner {
+    margin: 0 17.5px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__each {
+    width: 50%;
+
+    display: inline-block;
+    float: left;
+
+    margin-bottom: 25px;
+  }
+
+}

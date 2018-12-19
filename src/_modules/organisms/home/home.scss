@@ -1,0 +1,42 @@
+// home styles
+.home {
+  color: $beige;
+
+  &__instructions {
+    position: absolute;
+    text-align: center;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    top: 450px;
+
+    h1 {
+
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 639px;
+    left: calc(50% - 4px);
+
+    transform: translateX(-50%);
+
+
+    img {
+      width: 191px;
+
+      @include pulse(
+        $count: infinite,
+        $duration: 1.5s
+      );
+    }
+
+  }
+
+}

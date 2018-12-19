@@ -1,0 +1,10 @@
+mixin take-photo(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .take-photo.page
+    .take-photo__camera
+      each frame in site.data.frames
+        .take-photo__frame(data-show="#{frame.category}")
+          img(src="#{frame.image}")
+      #camera

@@ -1,0 +1,12 @@
+@mixin horizontal-center() {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Mixin for Objectfit
+@mixin objectfit() {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "image": "../images/1person.png",
+    "number": "1",
+    "text": "PERSON",
+    "category": "1"
+  },
+  {
+    "image": "../images/2persons.png",
+    "number": "2",
+    "text": "PERSONS",
+    "category": "2"
+  },
+  {
+    "image": "../images/3persons.png",
+    "number": "3-4",
+    "text": "PERSONS",
+    "category": "3-4"
+  },
+  {
+    "image": "../images/4persons.png",
+    "number": "5",
+    "text": "OR MORE PERSONS",
+    "category": "5"
+  }
+]

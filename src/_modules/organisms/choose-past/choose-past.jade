@@ -1,0 +1,19 @@
+mixin choose-past(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .choose-past.page
+    .choose-past__instructions
+      h1
+        | CHOOSE
+        span YOUR PAST
+        
+    .choose-past__choices
+      each past in site.data.pasts
+        .choose-past__each(data-category="#{past.category}")
+          .choose-past__inner
+            .choose-past__label
+              h1= past.number
+              p= past.text
+            img(src="#{past.image}" class="object-fit")
+            

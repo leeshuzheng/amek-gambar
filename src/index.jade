@@ -1,0 +1,24 @@
+extends _layouts/base
+
+
+include _modules/organisms/home/home
+include _modules/organisms/choose-past/choose-past
+include _modules/organisms/take-photo/take-photo
+include _modules/organisms/show-photo/show-photo
+include _modules/organisms/submit-photo/submit-photo
+include _modules/organisms/thank-you/thank-you
+
+block content
+  .amek-gambar
+    .amek-gambar__header
+      img(src="../images/header.png")
+
+    .amek-gambar__footer
+      img(src="../images/footer.png")
+      
+    +home()
+    +choose-past()
+    +take-photo()
+    +show-photo()
+    +submit-photo()
+    +thank-you()
