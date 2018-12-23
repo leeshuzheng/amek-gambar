@@ -1,8 +1,7 @@
 'use strict';
 
 import $ from 'jquery';
-// import Webcam from '../../../_scripts/webcam.min';
-import { showPage, initCamera } from '../../../_scripts/_helper';
+import { showPage, initCamera, setGlobalCategory } from '../../../_scripts/_helper';
 
 export default class ChoosePast {
   constructor() {
@@ -12,14 +11,16 @@ export default class ChoosePast {
 
     choosePastEach.on('click touchstart', function() {
 
-      // .take-photo__frame
-
       let category = $(this).data('category');
 
       showPage(takePhotoPage);
 
       $('.take-photo__frame').removeClass('show');
       $(`.take-photo__frame[data-show="${category}"]`).addClass('show');
+
+      setGlobalCategory(category);
+
+      $(window).trigger('startCountdown');
 
       initCamera();
 

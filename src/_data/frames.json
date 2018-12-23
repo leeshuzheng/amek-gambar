@@ -1,18 +1,18 @@
 [
   {
     "category": "1",
-    "image": "../images/1person.png"
+    "image": "../images/frames/1.png"
   },
   {
     "category": "2",
-    "image": "../images/2persons.png"
+    "image": "../images/frames/2.png"
   },
   {
     "category": "3-4",
-    "image": "../images/3persons.png"
+    "image": "../images/frames/3.png"
   },
   {
     "category": "5",
-    "image": "../images/4persons.png"
+    "image": "../images/frames/5orMore.png"
   }
 ]

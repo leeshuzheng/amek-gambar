@@ -14,11 +14,35 @@ import ThankYou from '../_modules/organisms/thank-you/thank-you';
 
 $(() => {
 
+  // html2canvas(document.querySelector('.holdscreenshot')).then(canvas => {
+  //   let base64string = getBase64FromCanvas(canvas);
+  //
+  //   let formdata = {
+  //     'action': 'update_user_submissions',
+  //     'panel': currentPanel,
+  //     'email': emailValue,
+  //     'image': base64string
+  //   };
+  //
+  //   $.ajax({
+  //     type: 'POST',
+  //     dataType: 'text',
+  //     url: evaair2018.ajaxurl,
+  //     data: formdata,
+  //     success: function success(data) {
+  //       console.log(data);
+  //     },
+  //     error: function error(e) {
+  //       console.log(e);
+  //     }
+  //   });
+  // });
+
   new Home();
   new ChoosePast();
   new ShowPhoto();
   new SubmitPhoto();
   new TakePhoto();
   new ThankYou();
-  
+
 });

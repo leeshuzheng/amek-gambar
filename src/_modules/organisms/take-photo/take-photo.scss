@@ -10,6 +10,16 @@ $height: 520px;
 
 .take-photo {
 
+  &__countdown {
+    position: absolute;
+
+    color: $beige;
+
+    @include horizontal-center;
+
+    font-size: 110pt;
+  }
+
   &__camera {
     width: $width;
     height: $height;
@@ -20,6 +30,10 @@ $height: 520px;
     @include horizontal-center();
 
     z-index: 2;
+
+    display: flex;
+
+    align-items: center;
   }
 
   &__frame {

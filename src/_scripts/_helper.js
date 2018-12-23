@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Webcam from './webcam.min';
+import Webcam from './webcam';
 
 let showPage = function(page) {
 
@@ -14,4 +14,27 @@ let initCamera = function() {
 
 }
 
-export { showPage, initCamera };
+let setGlobalCategory = function(category) {
+
+  window.category = category;
+
+}
+
+// let handleIdle = function() {
+//
+//   let idleTimer;
+//
+//   $('*').bind('click touchstart', function (e) {
+//     clearTimeout(idleTimer);
+//
+//     idleTimer = setTimeout(function () {
+//
+//       reset();
+//
+//     }, idleWait);
+//
+//   });
+//
+// }
+
+export { showPage, initCamera, setGlobalCategory };

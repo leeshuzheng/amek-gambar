@@ -3,3 +3,9 @@ mixin show-photo(spec)
   - spec.__class = spec.__class || ''
 
   .show-photo.page
+    .show-photo__container
+      .show-photo__image
+      .show-photo__frames
+        each frame in site.data.frames
+          .show-photo__frame(data-show="#{frame.category}" style="background-image: url(#{frame.image})")
+          

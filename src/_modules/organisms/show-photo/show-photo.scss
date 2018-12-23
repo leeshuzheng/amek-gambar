@@ -1,1 +1,14 @@
 // show-photo styles
+.show-photo {
+
+  &__frame {
+    visibility: hidden;
+
+
+    &.show {
+      visibility: visible;
+    }
+
+  }
+
+}
