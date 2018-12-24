@@ -7,8 +7,18 @@
 
     &.show {
       visibility: visible;
+
+      width: 500px;
+      height: 400px;
     }
 
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
   }
 
 }

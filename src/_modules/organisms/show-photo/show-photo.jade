@@ -8,4 +8,7 @@ mixin show-photo(spec)
       .show-photo__frames
         each frame in site.data.frames
           .show-photo__frame(data-show="#{frame.category}" style="background-image: url(#{frame.image})")
+    .show-photo__buttons
+      button(class="show-photo__retake") RETAKE
+      button(class="show-photo__submit") SUBMIT
           

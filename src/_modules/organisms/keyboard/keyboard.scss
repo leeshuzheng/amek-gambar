@@ -1,0 +1,142 @@
+// keyboard styles
+$keyWidth: 67px;
+$keyHeight: $keyWidth * 1.25;
+
+.tippy-tooltip {
+  font-size: 15pt;
+}
+
+#container {
+  margin: 25px auto 0;
+
+  #tooltip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 165px;
+    padding: 5px 15px;
+    background: black;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+      transition: all .3s;
+    }
+
+    span {
+      color: white;
+      font-size: 14pt;
+    }
+  }
+
+  .btn {
+    margin: 20px 0;
+
+    &.close {
+      &:before {
+        background-color: silver;
+      }
+
+      &:after {
+        background-color: grey;
+      }
+    }
+
+    // &.submit {
+    //   &:before {
+    //     background-color: $crimson;
+    //   }
+    //
+    //   &:after {
+    //     background-color: $darkRed;
+    //   }
+    // }
+  }
+}
+
+#write {
+  margin: 0 0 5px;
+  padding: 5px;
+  padding-left: 30px;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  height: 85px;
+  font-size: 20pt;
+  border: 0;
+  text-align: center;
+  border-radius: 25px;
+  outline: none;
+
+  &::placeholder {
+    color: grey;
+  }
+}
+
+#keyboard {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15pt;
+
+  li {
+    float: left;
+    width: $keyWidth;
+    height: $keyHeight;
+    line-height: $keyHeight;
+    text-align: center;
+    background: $grey;
+    color: $white;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 2px;
+    font-size: 28pt;
+  }
+
+  .return {
+    width: 77px;
+  }
+  .left-shift {
+    width: $keyWidth * 2;
+  }
+  .com {
+    width: $keyWidth * 2;
+  }
+  .darkGrey {
+    background-color: black;
+  }
+}
+
+.capslock, .tab, .left-shift {
+  clear: left;
+}
+
+.left-shift {
+  img {
+    max-width: 30px;
+    margin-top: 23px;
+  }
+}
+
+.delete {
+  img {
+    max-width: 35px;
+    margin-top: 21px;
+  }
+}
+
+.lastitem {
+  margin-right: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.on {
+  display: none;
+}

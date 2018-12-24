@@ -1,9 +1,14 @@
 import $ from 'jquery';
 import Webcam from './webcam';
 
-let showPage = function(page) {
+let showPage = function(page, string) {
 
   $('.page').removeClass('show');
+
+  if (string.length) {
+    page.data('info', string);
+  }
+
   page.addClass('show');
 
 }
@@ -17,6 +22,14 @@ let initCamera = function() {
 let setGlobalCategory = function(category) {
 
   window.category = category;
+
+}
+
+let getBase64FromCanvas = function(canvas) {
+
+  let base64 = canvas.toDataURL('image/png');
+
+  return base64;
 
 }
 
@@ -37,4 +50,4 @@ let setGlobalCategory = function(category) {
 //
 // }
 
-export { showPage, initCamera, setGlobalCategory };
+export { showPage, initCamera, setGlobalCategory, getBase64FromCanvas };

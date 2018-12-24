@@ -12,7 +12,7 @@ export default class Home {
 
     home.on('click touchstart', function() {
 
-      showPage(choosePast);
+      showPage(choosePast, '');
 
     });
 

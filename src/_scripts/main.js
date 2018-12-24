@@ -11,32 +11,9 @@ import ShowPhoto from '../_modules/organisms/show-photo/show-photo';
 import SubmitPhoto from '../_modules/organisms/submit-photo/submit-photo';
 import TakePhoto from '../_modules/organisms/take-photo/take-photo';
 import ThankYou from '../_modules/organisms/thank-you/thank-you';
+import Keyboard from '../_modules/organisms/keyboard/keyboard';
 
 $(() => {
-
-  // html2canvas(document.querySelector('.holdscreenshot')).then(canvas => {
-  //   let base64string = getBase64FromCanvas(canvas);
-  //
-  //   let formdata = {
-  //     'action': 'update_user_submissions',
-  //     'panel': currentPanel,
-  //     'email': emailValue,
-  //     'image': base64string
-  //   };
-  //
-  //   $.ajax({
-  //     type: 'POST',
-  //     dataType: 'text',
-  //     url: evaair2018.ajaxurl,
-  //     data: formdata,
-  //     success: function success(data) {
-  //       console.log(data);
-  //     },
-  //     error: function error(e) {
-  //       console.log(e);
-  //     }
-  //   });
-  // });
 
   new Home();
   new ChoosePast();
@@ -44,5 +21,6 @@ $(() => {
   new SubmitPhoto();
   new TakePhoto();
   new ThankYou();
+  new Keyboard();
 
 });

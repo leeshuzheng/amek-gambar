@@ -13,7 +13,7 @@ export default class ChoosePast {
 
       let category = $(this).data('category');
 
-      showPage(takePhotoPage);
+      showPage(takePhotoPage, '');
 
       $('.take-photo__frame').removeClass('show');
       $(`.take-photo__frame[data-show="${category}"]`).addClass('show');

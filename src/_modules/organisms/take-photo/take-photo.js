@@ -7,17 +7,13 @@ export default class TakePhoto {
   constructor() {
 
     let takePhotoCountdown = $('.take-photo__countdown'),
-    count = 9,
     countdownInterval,
+    count,
     audio = $('audio');
 
     window.prototype = true;
 
-    if (window.prototype) {
-      count = 3;
-    }
-
-    let fuck = function() {
+    let countdown = function() {
 
       count--;
 
@@ -33,7 +29,15 @@ export default class TakePhoto {
 
     $(window).on('startCountdown', function() {
 
-      countdownInterval = setInterval(fuck, 1000);
+      takePhotoCountdown.html('');
+
+      count = 10;
+
+      if (window.prototype) {
+        count = 3;
+      }
+
+      countdownInterval = setInterval(countdown, 1000);
 
     });
 
