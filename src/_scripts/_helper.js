@@ -5,7 +5,7 @@ let showPage = function(page, string) {
 
   $('.page').removeClass('show');
 
-  if (string.length) {
+  if (string && string.length) {
     page.data('info', string);
   }
 
@@ -13,9 +13,31 @@ let showPage = function(page, string) {
 
 }
 
-let initCamera = function() {
+let initCamera = function(category) {
 
-  Webcam.attach('#camera');
+  let height, width;
+
+  if (category === '3-4') {
+    // Webcam.attach('.camera__tall')
+
+    height = 915;
+    width = 520;
+
+  } else {
+
+    height = 520;
+    width = 915;
+
+    // Webcam.attach('.camera');
+
+  }
+
+  Webcam.set({
+    width: width,
+    height: height
+  });
+
+  Webcam.attach('.camera');
 
 }
 
@@ -33,21 +55,24 @@ let getBase64FromCanvas = function(canvas) {
 
 }
 
-// let handleIdle = function() {
-//
-//   let idleTimer;
-//
-//   $('*').bind('click touchstart', function (e) {
-//     clearTimeout(idleTimer);
-//
-//     idleTimer = setTimeout(function () {
-//
-//       reset();
-//
-//     }, idleWait);
-//
-//   });
-//
-// }
+let isValidEmail = function(e) {
+  var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+  return String(e).search (filter) != -1;
+}
 
-export { showPage, initCamera, setGlobalCategory, getBase64FromCanvas };
+let getUrlParameter = function(sParam) {
+  var sPageURL = window.location.search.substring(1),
+  sURLVariables = sPageURL.split('&'),
+  sParameterName,
+  i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+    }
+  }
+};
+
+export { showPage, initCamera, setGlobalCategory, getBase64FromCanvas, isValidEmail, getUrlParameter };

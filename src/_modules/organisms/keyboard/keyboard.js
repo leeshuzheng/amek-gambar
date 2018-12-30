@@ -4,11 +4,27 @@ import $ from 'jquery';
 
 export default class Keyboard {
   constructor() {
-    let $write = $('#write'),
+    let keyboard = $('.keyboard'),
+      clearBtn = keyboard.find('.clear'),
+      submitBtn = keyboard.find('.submit'),
+      keyboardInput = $('.keyboard__input'),
       shift = false,
       capslock = false;
 
-    $('#keyboard li').click(function() {
+    submitBtn.on('click touchstart', function(event) {
+      event.preventDefault();
+
+      $(window).trigger('submit');
+    });
+
+    clearBtn.on('click touchstart', function(event) {
+      event.preventDefault();
+
+      keyboardInput.val('');
+    });
+
+    $('.keyboard__keys li').click(function() {
+
       let $this = $(this),
         character = $this.html(); // If it's a lowercase letter, nothing happens to this letiable
 
@@ -31,9 +47,9 @@ export default class Keyboard {
 
       // Delete
       if ($this.hasClass('delete')) {
-        let html = $write.val();
+        let html = keyboardInput.val();
 
-        $write.val(html.substr(0, html.length - 1));
+        keyboardInput.val(html.substr(0, html.length - 1));
         return false;
       }
 
@@ -54,7 +70,7 @@ export default class Keyboard {
       }
 
       // Add the character
-      $write.val($write.val() + character);
+      keyboardInput.val(keyboardInput.val() + character);
     });
   }
 }

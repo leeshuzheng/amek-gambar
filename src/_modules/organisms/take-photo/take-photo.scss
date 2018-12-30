@@ -3,9 +3,15 @@
 $width: 915px;
 $height: 520px;
 
-#camera {
+.camera {
   width: $width;
   height: $height;
+
+  &__tall {
+
+    // width: $height;
+    // height: $width;
+  }
 }
 
 .take-photo {

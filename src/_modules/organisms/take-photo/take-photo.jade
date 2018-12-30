@@ -7,5 +7,6 @@ mixin take-photo(spec)
       each frame in site.data.frames
         .take-photo__frame(data-show="#{frame.category}")
           img(src="#{frame.image}")
-      #camera
+      .camera(style="width: 915px; height: 520px")
+      //- .camera__tall
       span.take-photo__countdown

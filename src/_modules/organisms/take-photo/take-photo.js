@@ -34,7 +34,7 @@ export default class TakePhoto {
       count = 10;
 
       if (window.prototype) {
-        count = 3;
+        count = 5;
       }
 
       countdownInterval = setInterval(countdown, 1000);

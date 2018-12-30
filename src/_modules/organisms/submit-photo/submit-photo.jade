@@ -1,5 +1,12 @@
+include ../keyboard/keyboard
+
 mixin submit-photo(spec)
   - spec = spec || {}
   - spec.__class = spec.__class || ''
 
   .submit-photo.page
+    .submit-photo__header
+      h1
+        | DOWNLOAD
+        span YOUR PORTRAIT
+    +keyboard()

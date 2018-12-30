@@ -1,13 +1,94 @@
 // keyboard styles
-$keyWidth: 67px;
+$keyWidth: 75px;
 $keyHeight: $keyWidth * 1.25;
 
 .tippy-tooltip {
   font-size: 15pt;
 }
 
-#container {
+.keyboard {
   margin: 25px auto 0;
+  position: absolute;
+  @include horizontal-center();
+
+  top: 500px;
+  width: 871px;
+
+  text-align: center;
+
+  white-space: normal;
+
+  button {
+    background-color: $beige;
+    padding: 15px;
+
+    border: 1px solid transparent;
+
+    width: 50%;
+
+    float: left;
+
+    outline: none;
+  }
+
+  &__input {
+
+     margin: 0 0 5px;
+     padding: 5px 5px 5px 30px;
+
+     width: 100%;
+
+     height: 85px;
+
+     background: transparent;
+     color: white;
+
+     font-size: 20pt;
+     border: 0;
+     border-bottom: 1px solid rgba(255,255,255,.85);
+
+     text-align: center;
+     outline: none;
+
+     &::placeholder {
+       color: white;
+     }
+
+  }
+
+  &__keys {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15pt;
+
+    background: black;
+
+    li {
+      float: left;
+      width: $keyWidth;
+      height: $keyHeight;
+      line-height: $keyHeight;
+      text-align: center;
+      background: $grey;
+      color: $white;
+      border: 1px solid black;
+      border-radius: 10px;
+      margin: 2px;
+      font-size: 28pt;
+    }
+
+    .return {
+      width: 77px;
+    }
+    .left-shift {
+      width: $keyWidth * 2;
+    }
+    .com {
+      width: $keyWidth * 2;
+    }
+
+  }
 
   #tooltip {
     position: absolute;
@@ -45,71 +126,9 @@ $keyHeight: $keyWidth * 1.25;
         background-color: grey;
       }
     }
-
-    // &.submit {
-    //   &:before {
-    //     background-color: $crimson;
-    //   }
-    //
-    //   &:after {
-    //     background-color: $darkRed;
-    //   }
-    // }
   }
 }
 
-#write {
-  margin: 0 0 5px;
-  padding: 5px;
-  padding-left: 30px;
-  width: 100%;
-  background: #fff;
-  color: #000;
-  height: 85px;
-  font-size: 20pt;
-  border: 0;
-  text-align: center;
-  border-radius: 25px;
-  outline: none;
-
-  &::placeholder {
-    color: grey;
-  }
-}
-
-#keyboard {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 15pt;
-
-  li {
-    float: left;
-    width: $keyWidth;
-    height: $keyHeight;
-    line-height: $keyHeight;
-    text-align: center;
-    background: $grey;
-    color: $white;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 2px;
-    font-size: 28pt;
-  }
-
-  .return {
-    width: 77px;
-  }
-  .left-shift {
-    width: $keyWidth * 2;
-  }
-  .com {
-    width: $keyWidth * 2;
-  }
-  .darkGrey {
-    background-color: black;
-  }
-}
 
 .capslock, .tab, .left-shift {
   clear: left;

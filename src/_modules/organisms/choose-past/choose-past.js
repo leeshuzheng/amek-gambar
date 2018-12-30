@@ -22,7 +22,7 @@ export default class ChoosePast {
 
       $(window).trigger('startCountdown');
 
-      initCamera();
+      initCamera(category);
 
     })
 
