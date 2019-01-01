@@ -75,4 +75,12 @@ let getUrlParameter = function(sParam) {
   }
 };
 
-export { showPage, initCamera, setGlobalCategory, getBase64FromCanvas, isValidEmail, getUrlParameter };
+let reset = function() {
+
+  showPage($('.home', ''));
+  $('input').val('');
+
+
+}
+
+export { showPage, initCamera, setGlobalCategory, getBase64FromCanvas, isValidEmail, getUrlParameter, reset };

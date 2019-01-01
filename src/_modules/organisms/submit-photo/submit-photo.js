@@ -38,11 +38,14 @@ export default class SubmitPhoto {
           'image': base64string
         };
 
+        console.log(formData);
+
         $.ajax({
-          type: 'POST',
+          type: 'GET',
           dataType: 'text',
-          url: amekgambar.ajaxurl,
-          data: formData,
+          // url: amekgambar.ajaxurl,
+          url: 'https://jsonplaceholder.typicode.com/todos/1',
+          // data: formData,
           success: function success(data) {
             console.log('success bitches');
             console.log(data);

@@ -5,7 +5,7 @@
 
 import $ from 'jquery';
 
-import { showPage } from '../_scripts/_helper';
+import { showPage, reset } from '../_scripts/_helper';
 
 import Home from '../_modules/organisms/home/home';
 import ChoosePast from '../_modules/organisms/choose-past/choose-past';
@@ -31,11 +31,6 @@ $(() => {
       }, window.idleWait);
 
     });
-
-    function reset() {
-      showPage($('.home', ''));
-      $('input').val('');
-    }
 
 
 
