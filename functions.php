@@ -377,6 +377,19 @@ require get_template_directory() . '/inc/template-tags.php';
 */
 require get_template_directory() . '/inc/customizer.php';
 
+add_action('add_meta_boxes', 'show_user_image');
+
+function show_user_image() {
+	add_meta_box('show_user_image', 'Show User Image', 'display_user_image', 'user_submissions');
+}
+
+function display_user_image() {
+	global $post;
+	$imageInfo = get_post_meta($post->ID, 'image_src');
+	$imageHolder = '<img style="width: 400px" src="' . $imageInfo[0] . '" />';
+	echo $imageHolder;
+}
+
 add_action( 'wp_ajax_nopriv_update_user_submissions', 'update_user_submissions' );
 add_action( 'wp_ajax_update_user_submissions', 'update_user_submissions' );
 
@@ -389,7 +402,7 @@ function update_user_submissions() {
 	$time = date('Ymd H:i:s');
 
 	$post_title = $time . '-' . $panel . '-' . $email;
-	
+
 	if ( ! is_admin() ) {
 		require_once( ABSPATH . 'wp-admin/includes/post.php' );
 	}
@@ -397,6 +410,7 @@ function update_user_submissions() {
 	$currentPost = get_post_by_title($post_title, OBJECT);
 
 	if ( !$currentPost ) {
+
 		$newVisitorCount = array(
 			'post_title' => $post_title,
 			'post_status' => 'publish',
@@ -405,7 +419,7 @@ function update_user_submissions() {
 
 		$newPost = wp_insert_post($newVisitorCount);
 
-		update_field('field_5b37dc6741f00', $email, $newPost);
+		update_field('field_5c2c2a0cca65c', $email, $newPost);
 
 		if ( ! add_post_meta( $newPost, 'image_src', $image, true ) ) {  // if no post meta exists
 			update_post_meta( $newPost, 'image_src', $image ); // create new post meta for meta key named 'image_src'

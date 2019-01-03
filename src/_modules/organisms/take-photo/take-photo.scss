@@ -6,12 +6,6 @@ $height: 520px;
 .camera {
   width: $width;
   height: $height;
-
-  &__tall {
-
-    // width: $height;
-    // height: $width;
-  }
 }
 
 .take-photo {
@@ -50,6 +44,9 @@ $height: 520px;
 
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
     }
 
 

@@ -11,7 +11,7 @@ export default class TakePhoto {
     count,
     audio = $('audio');
 
-    window.prototype = true;
+    window.prototype = false;
 
     let countdown = function() {
 
@@ -31,11 +31,7 @@ export default class TakePhoto {
 
       takePhotoCountdown.html('');
 
-      count = 10;
-
-      if (window.prototype) {
-        count = 5;
-      }
+      count = 11;
 
       countdownInterval = setInterval(countdown, 1000);
 

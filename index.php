@@ -14,7 +14,6 @@
  * @since 1.0.0
  */
  get_header();
- send_email('leeshuzheng@gmail.com');
 ?>
 
 <audio>
