@@ -58,7 +58,9 @@ export default class TakePhoto {
     function takePhoto() {
 
       Webcam.snap(function(data_uri) {
+
         document.querySelector('.show-photo__image').innerHTML = '<img src="'+data_uri+'"/>';
+
       });
 
       audio[0].play();

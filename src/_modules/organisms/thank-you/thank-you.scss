@@ -1,1 +1,51 @@
 // thank-you styles
+.thank-you {
+
+  &__thanks {
+    position: absolute;
+
+    @include horizontal-center();
+
+    top: 390px;
+
+    h1 {
+      color: $beige;
+      text-align: center;
+
+      font-family: 'Din Bold';
+
+      font-size: 70pt;
+
+
+      span {
+        display: block;
+
+        font-size: 42pt;
+      }
+    }
+
+  }
+
+  &__instructions {
+    p {
+      color: $beige;
+
+      position: absolute;
+
+      @include horizontal-center();
+
+      font-family: 'Proxima Nova';
+
+      text-align: center;
+
+      font-size: 25pt;
+
+      font-weight: normal;
+
+      top: 745px;
+
+      width: 100%;
+    }
+  }
+
+}

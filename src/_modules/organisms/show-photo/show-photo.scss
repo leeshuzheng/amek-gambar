@@ -1,13 +1,19 @@
 // show-photo styles
-$width: 990px;
-$height: 740px;
+$width: 920px;
+$height: 650px;
 
 .show-photo {
 
   &__container {
     position: relative;
 
+    width: $width;
+    height: $height;
 
+    margin-left: auto;
+    margin-right: auto;
+
+    top: 550px;
   }
 
   &__image {
@@ -27,6 +33,8 @@ $height: 740px;
   }
 
   &__frame {
+    position: absolute;
+
     visibility: hidden;
 
     width: 100%;
@@ -44,7 +52,24 @@ $height: 740px;
     display: flex;
     flex-direction: row;
 
-    justify-content: space-between;
+    justify-content: space-around;
+
+    position: absolute;
+    @include horizontal-center();
+
+    top: 1205px;
+
+    button {
+      font-family: 'Din Bold';
+      font-size: 23pt;
+
+      padding: 22px 60px;
+
+      border-radius: 15pt;
+
+      margin: 0 10px;
+    }
+
   }
 
 }

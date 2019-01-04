@@ -7,28 +7,40 @@ $keyHeight: $keyWidth * 1.25;
 }
 
 .keyboard {
-  margin: 25px auto 0;
   position: absolute;
   @include horizontal-center();
 
-  top: 500px;
+  top: 690px;
   width: 871px;
 
   text-align: center;
 
   white-space: normal;
 
+  &__buttons {
+
+    display: flex;
+    justify-content: center;
+
+    margin: 15px 0;
+
+  }
+
   button {
     background-color: $beige;
-    padding: 15px;
 
     border: 1px solid transparent;
 
-    width: 50%;
-
-    float: left;
-
     outline: none;
+
+    width: 430px;
+
+    font-size: 33pt;
+
+    padding: 20px 30px;
+    margin: 0 5px;
+
+    border-radius: 20pt;
   }
 
   &__input {
@@ -38,12 +50,12 @@ $keyHeight: $keyWidth * 1.25;
 
      width: 100%;
 
-     height: 85px;
+     height: 80px;
 
      background: transparent;
      color: white;
 
-     font-size: 20pt;
+     font-size: 35pt;
      border: 0;
      border-bottom: 1px solid rgba(255,255,255,.85);
 
@@ -52,6 +64,8 @@ $keyHeight: $keyWidth * 1.25;
 
      &::placeholder {
        color: white;
+
+       font-family: 'Proxima Nova';
      }
 
   }
@@ -64,18 +78,28 @@ $keyHeight: $keyWidth * 1.25;
 
     background: black;
 
+    height: 394px;
+
     li {
       float: left;
       width: $keyWidth;
       height: $keyHeight;
       line-height: $keyHeight;
       text-align: center;
-      background: $grey;
+      background: $medGrey;
       color: $white;
       border: 1px solid black;
       border-radius: 10px;
       margin: 2px;
       font-size: 28pt;
+
+      &.lastitem {
+        margin-right: 0;
+      }
+
+      &.dark {
+        background-color: $darkGrey;
+      }
     }
 
     .return {
@@ -115,7 +139,7 @@ $keyHeight: $keyWidth * 1.25;
   }
 
   .btn {
-    margin: 20px 0;
+    // margin: 20px 0;
 
     &.close {
       &:before {
@@ -146,10 +170,6 @@ $keyHeight: $keyWidth * 1.25;
     max-width: 35px;
     margin-top: 21px;
   }
-}
-
-.lastitem {
-  margin-right: 0;
 }
 
 .uppercase {

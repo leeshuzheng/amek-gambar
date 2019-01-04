@@ -6,11 +6,12 @@ mixin keyboard(spec)
     #tooltip
       span Please enter a valid email address
     input.keyboard__input(type="email", placeholder="Email")
-    button.clear
-      span CLEAR
-    button.submit
-      span SUBMIT
-    |             
+    .keyboard__buttons
+      button.clear.btn
+        span CLEAR
+      button.submit.btn
+        span SUBMIT
+           
     ul.keyboard__keys
       li.symbol
         span.off 1
@@ -52,7 +53,7 @@ mixin keyboard(spec)
         span.off 0
         span.on 0
       |               
-      li.delete.lastitem
+      li.delete.lastitem.dark
         img(src="../images/backspace.svg")
       |               
       li.letter q
@@ -75,7 +76,7 @@ mixin keyboard(spec)
       |               
       li.letter p
       |               
-      li.symbol
+      li.symbol.dark
         span.off -
         span.on _
       |               
@@ -101,11 +102,11 @@ mixin keyboard(spec)
         span.off .
         span.on .
       |               
-      li.symbol
+      li.symbol.dark
         span.off @
         span.on @
       |               
-      li.left-shift
+      li.left-shift.dark
         img(src="../images/shift.svg")
       |               
       li.letter z
@@ -122,6 +123,6 @@ mixin keyboard(spec)
       |               
       li.letter m
       |               
-      li.letter.com .com
+      li.letter.com.dark .com
       |               
       div(style="clear:both")

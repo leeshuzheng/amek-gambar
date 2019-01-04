@@ -3,6 +3,18 @@ mixin thank-you(spec)
   - spec.__class = spec.__class || ''
 
   .thank-you.page
-    h1 thanks man!!
+    .thank-you__thanks
+      h1 
+        | THANK YOU
+        span FOR TAKING PART!
+        
     
-    button.thank-you__restart restart
+    .thank-you__instructions
+      p
+        | Upload your portrait onto Instagram with 
+        br
+        | #OutdoTheOriginal and stand a chance to
+        br
+        | win *insert prize/copy here
+    
+    //- button.thank-you__restart restart

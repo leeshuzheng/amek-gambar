@@ -43,7 +43,6 @@ export default class ShowPhoto {
 
         let base64string = getBase64FromCanvas(canvas);
 
-
         showPage(submitPhoto, base64string);
 
         $(window).trigger('showSubmissionForm');
