@@ -3,15 +3,25 @@
 import $ from 'jquery';
 import Webcam from '../../../_scripts/webcam';
 
+import { showPage } from '../../../_scripts/_helper';
+
 export default class TakePhoto {
   constructor() {
 
     let takePhotoCountdown = $('.take-photo__countdown'),
+    backBtn = $('.take-photo__back'),
     countdownInterval,
     count,
     audio = $('audio');
 
-    window.prototype = false;
+
+    backBtn.on('click touchstart', function(event) {
+      event.preventDefault();
+
+      showPage($('.choose-past'));
+
+      clearInterval(countdownInterval);
+    })
 
     let countdown = function() {
 
@@ -31,7 +41,7 @@ export default class TakePhoto {
 
       takePhotoCountdown.html('');
 
-      count = 1100;
+      count = 4;
 
       countdownInterval = setInterval(countdown, 1000);
 
