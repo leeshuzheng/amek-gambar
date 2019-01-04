@@ -31,7 +31,7 @@ export default class TakePhoto {
 
       takePhotoCountdown.html('');
 
-      count = 11;
+      count = 1100;
 
       countdownInterval = setInterval(countdown, 1000);
 

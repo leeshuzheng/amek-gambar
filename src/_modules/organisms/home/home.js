@@ -8,11 +8,13 @@ export default class Home {
 
     let choosePast = $('.choose-past'),
     home = $('.home'),
-    page = $('.page');
+    page = $('.page'),
+    amekgambarHeader = $('.amek-gambar__header');
 
     home.on('click touchstart', function() {
 
       showPage(choosePast, '');
+      amekgambarHeader.addClass('smaller');
 
     });
 

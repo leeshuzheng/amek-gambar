@@ -17,6 +17,7 @@ export default class ChoosePast {
 
       $('.take-photo__frame').removeClass('show');
       $(`.take-photo__frame[data-show="${category}"]`).addClass('show');
+      $(`.take-photo__sample[data-show="${category}"]`).addClass('show');
 
       setGlobalCategory(category);
 

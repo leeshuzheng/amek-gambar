@@ -71,12 +71,23 @@ html {
 
   &__header {
     position: absolute;
-    top: 120px;
+    top: 118px;
     @include horizontal-center();
 
     img {
-      width: 370px;
+      width: 400px;
     }
+
+    &.smaller {
+      top: 110px;
+
+
+      img {
+        width: 335px;
+      }
+
+    }
+
   }
 
   &__footer {
@@ -89,4 +100,8 @@ html {
     }
   }
 
+}
+
+h1 {
+  font-weight: normal;
 }

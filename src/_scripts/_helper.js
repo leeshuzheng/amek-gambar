@@ -15,26 +15,9 @@ let showPage = function(page, string) {
 
 let initCamera = function(category) {
 
-  let height, width;
-
-  if (category === '3-4') {
-    // Webcam.attach('.camera__tall')
-
-    height = 915;
-    width = 520;
-
-  } else {
-
-    height = 520;
-    width = 915;
-
-    // Webcam.attach('.camera');
-
-  }
-
   Webcam.set({
-    width: width,
-    height: height
+    width: 950,
+    height: 720
   });
 
   Webcam.attach('.camera');
@@ -77,9 +60,9 @@ let getUrlParameter = function(sParam) {
 
 let reset = function() {
 
-  showPage($('.home', ''));
+  showPage($('.home'), '');
   $('input').val('');
-
+  $('.amek-gambar__header').removeClass('smaller');
 
 }
 

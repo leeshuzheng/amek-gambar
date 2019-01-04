@@ -10,12 +10,22 @@
 
     @include horizontal-center();
 
-    top: 450px;
+    top: 390px;
+
+    h1 {
+      font-family: 'Din Bold';
+      font-size: 5.7em;
+
+      font-weight: normal;
+    }
 
 
     span {
       display: block;
 
+      font-size: .65em;
+
+      position: relative;
     }
   }
 
@@ -28,6 +38,16 @@
 
     color: $white;
 
+    font-family: 'Din Bold';
+
+    h1 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 2.1em;
+    }
+
     h1,p {
       margin: 0;
     }
@@ -38,13 +58,13 @@
     width: 100%;
 
     position: absolute;
-    top: 550px;
+    top: 660px;
 
-    padding: 0 75px;
+    padding: 0 72.5px;
   }
 
   &__inner {
-    margin: 0 17.5px;
+    margin: 0 15px;
 
     position: relative;
 

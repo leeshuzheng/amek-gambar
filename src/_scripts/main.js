@@ -19,7 +19,7 @@ $(() => {
 
     let idleTimer;
 
-    window.idleWait = 30000;
+    window.idleWait = 300000;
 
     $('*').bind('click touchstart', function (e) {
       clearTimeout(idleTimer);
