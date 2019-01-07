@@ -5,6 +5,7 @@
     position: absolute;
 
     @include horizontal-center();
+    left: 31%;
 
     top: 400px;
 
@@ -14,7 +15,7 @@
       font-family: 'Din Bold';
       font-size: 65pt;
 
-      text-align: center;
+      text-align: left;
 
       span {
         display: block;

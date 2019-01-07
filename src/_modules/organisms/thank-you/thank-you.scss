@@ -5,12 +5,14 @@
     position: absolute;
 
     @include horizontal-center();
+    left: 32%;
 
     top: 390px;
 
+    text-align: left;
+
     h1 {
       color: $beige;
-      text-align: center;
 
       font-family: 'Din Bold';
 

@@ -11,6 +11,8 @@
 @import 'common/icons';
 
 // Import Modules
+@import '../_modules/atoms/loader/loader';
+
 @import '../_modules/organisms/home/home';
 @import '../_modules/organisms/choose-past/choose-past';
 @import '../_modules/organisms/take-photo/take-photo';
@@ -41,10 +43,6 @@ html {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-
-  background-image: url('../images/bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .page {
@@ -81,10 +79,11 @@ html {
 
     &.smaller {
       top: 110px;
+      left: 23%;
 
 
       img {
-        width: 335px;
+        width: 300px;
       }
 
     }
@@ -101,6 +100,24 @@ html {
     }
   }
 
+}
+
+.background {
+  width: 1080px;
+  height: 1920px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  background-image: url('../images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  filter: brightness(1.2);
 }
 
 h1 {

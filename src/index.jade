@@ -1,5 +1,6 @@
 extends _layouts/base
 
+include _modules/atoms/loader/loader
 
 include _modules/organisms/home/home
 include _modules/organisms/choose-past/choose-past
@@ -9,6 +10,8 @@ include _modules/organisms/submit-photo/submit-photo
 include _modules/organisms/thank-you/thank-you
 
 block content
+  .background
+  +loader()
   audio
     source(src="../audio/snap.mp3" type="audio/mpeg")
   .amek-gambar

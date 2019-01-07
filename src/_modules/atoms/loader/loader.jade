@@ -1,0 +1,7 @@
+mixin loader(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+  - spec.showClass = spec.showClass || ''
+
+  .loader.page(class="#{spec.showClass}")
+    img(src="../images/oval.svg")

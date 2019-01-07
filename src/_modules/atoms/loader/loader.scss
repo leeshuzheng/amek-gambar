@@ -1,0 +1,14 @@
+// loader styles
+.loader {
+  background-color: rgba(10,10,10,.6);
+  z-index: 41;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }
+  
+}

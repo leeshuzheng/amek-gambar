@@ -23,13 +23,10 @@ export default class SubmitPhoto {
 
     $(window).on('submit', function() {
 
-      // emmitted from keyboard.js
       let userEmail = $('.keyboard__input').val(),
       currentPanel = getUrlParameter('panel') || 'noPanel';
 
       if (isValidEmail(userEmail)) {
-
-        // hide tooltip
 
         let formData = {
           'action': 'update_user_submissions',
@@ -41,18 +38,19 @@ export default class SubmitPhoto {
         console.log(formData);
 
         $.ajax({
-          type: 'GET',
+          type: 'POST',
           dataType: 'text',
-          // url: amekgambar.ajaxurl,
-          url: 'https://jsonplaceholder.typicode.com/todos/1',
-          // data: formData,
+          url: amekgambar.ajaxurl,
+          data: formData,
           success: function success(data) {
-            console.log('success bitches');
+
             console.log(data);
+
           },
           error: function error(e) {
+
             console.log('error');
-            console.log(e);
+
           }
         });
 

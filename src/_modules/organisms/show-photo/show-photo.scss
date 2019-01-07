@@ -1,6 +1,15 @@
 // show-photo styles
-$width: 920px;
-$height: 650px;
+$width: 990px;
+$height: 600px;
+
+.show-photo__frame[data-show="3-4"] {
+  transform: rotate(90deg);
+  height: 430px;
+  width: 600px;
+
+  top: 84px;
+  left: 203px;
+}
 
 .show-photo {
 

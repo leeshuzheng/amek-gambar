@@ -3,7 +3,7 @@
 import $ from 'jquery';
 import html2canvas from 'html2canvas';
 
-import { showPage, getBase64FromCanvas } from '../../../_scripts/_helper';
+import { showPage, getBase64FromCanvas, showLoader, hideLoader } from '../../../_scripts/_helper';
 
 export default class ShowPhoto {
   constructor() {
@@ -13,7 +13,8 @@ export default class ShowPhoto {
     showPhotoFrame = $('.show-photo__frame'),
     retakePhotoBtn = $('.show-photo__retake'),
     submitPhotoBtn = $('.show-photo__submit'),
-    submitPhoto = $('.submit-photo');
+    submitPhoto = $('.submit-photo'),
+    base64string;
 
     $(window).on('showPhoto', function() {
 
@@ -31,23 +32,45 @@ export default class ShowPhoto {
     retakePhotoBtn.on('click touchstart', function(event) {
       event.preventDefault();
 
-      showPage(takePhoto, '');
-      $(window).trigger('startCountdown');
+      showLoader();
+
+      setTimeout(function() {
+
+        hideLoader();
+
+        showPage(takePhoto, '');
+        $(window).trigger('startCountdown');
+      }, 1000);
 
     });
 
     submitPhotoBtn.on('click touchstart', function(event) {
       event.preventDefault();
 
+      showLoader();
+
       html2canvas(document.querySelector('.show-photo__container')).then(canvas => {
 
-        let base64string = getBase64FromCanvas(canvas);
+        base64string = getBase64FromCanvas(canvas);
+
+      });
+
+      setTimeout(function() {
+
+        hideLoader();
 
         showPage(submitPhoto, base64string);
 
         $(window).trigger('showSubmissionForm');
 
-      });
+      }, 1000);
+
+
+
+
+
+
+
 
     });
 

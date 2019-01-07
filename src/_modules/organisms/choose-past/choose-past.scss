@@ -4,11 +4,12 @@
   &__instructions {
     color: $beige;
 
-    text-align: center;
+    text-align: left;
 
     position: absolute;
 
     @include horizontal-center();
+    left: 24%;
 
     top: 390px;
 

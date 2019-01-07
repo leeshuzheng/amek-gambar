@@ -1,20 +1,28 @@
 'use strict';
 
 import $ from 'jquery';
-import { showPage } from '../../../_scripts/_helper';
+import { showPage, showLoader, hideLoader } from '../../../_scripts/_helper';
 
 export default class Home {
   constructor() {
 
     let choosePast = $('.choose-past'),
-    home = $('.home'),
+    homeButton = $('.home__button'),
     page = $('.page'),
     amekgambarHeader = $('.amek-gambar__header');
 
-    home.on('click touchstart', function() {
+    homeButton.on('click touchstart', function() {
 
-      showPage(choosePast, '');
-      amekgambarHeader.addClass('smaller');
+      showLoader();
+
+      setTimeout(function() {
+
+        showPage(choosePast, '');
+        amekgambarHeader.addClass('smaller');
+
+        hideLoader();
+
+      }, 1000);
 
     });
 

@@ -16,8 +16,8 @@ let showPage = function(page, string) {
 let initCamera = function(category) {
 
   Webcam.set({
-    width: 950,
-    height: 720
+    width: 900,
+    height: 600
   });
 
   Webcam.attach('.camera');
@@ -66,4 +66,14 @@ let reset = function() {
 
 }
 
-export { showPage, initCamera, setGlobalCategory, getBase64FromCanvas, isValidEmail, getUrlParameter, reset };
+let showLoader = function() {
+
+  $('.loader').fadeIn();
+
+}
+
+let hideLoader = function() {
+  $('.loader').fadeOut();
+}
+
+export { showPage, initCamera, setGlobalCategory, getBase64FromCanvas, isValidEmail, getUrlParameter, reset, showLoader, hideLoader };

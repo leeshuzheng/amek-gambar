@@ -59,13 +59,13 @@ $keyHeight: $keyWidth * 1.25;
      border: 0;
      border-bottom: 1px solid rgba(255,255,255,.85);
 
-     text-align: center;
+     text-align: left;
      outline: none;
+
+     font-family: 'Proxima Nova';
 
      &::placeholder {
        color: white;
-
-       font-family: 'Proxima Nova';
      }
 
   }
