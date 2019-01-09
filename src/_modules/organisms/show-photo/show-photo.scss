@@ -1,15 +1,15 @@
 // show-photo styles
-$width: 990px;
+$width: 900px;
 $height: 600px;
 
-.show-photo__frame[data-show="3-4"] {
-  transform: rotate(90deg);
-  height: 430px;
-  width: 600px;
-
-  top: 84px;
-  left: 203px;
-}
+// .show-photo__frame[data-show="3-4"] {
+//   transform: rotate(90deg);
+//   height: 430px;
+//   width: 600px;
+//
+//   top: 84px;
+//   left: 203px;
+// }
 
 .show-photo {
 
@@ -22,7 +22,9 @@ $height: 600px;
     margin-left: auto;
     margin-right: auto;
 
-    top: 550px;
+    top: 697px;
+
+    overflow: hidden;
   }
 
   &__image {
@@ -30,7 +32,12 @@ $height: 600px;
 
     img {
       width: $width;
-      height: $height;
+      height: 520px;
+
+      transform: scaleX(-1) scale(1.29);
+
+      position: absolute;
+      top: 44px;
     }
   }
 
@@ -66,7 +73,7 @@ $height: 600px;
     position: absolute;
     @include horizontal-center();
 
-    top: 1205px;
+    top: 1308px;
 
     button {
       font-family: 'Din Bold';

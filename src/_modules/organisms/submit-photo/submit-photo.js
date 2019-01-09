@@ -9,6 +9,7 @@ export default class SubmitPhoto {
 
     let submitPhoto = $('.submit-photo'),
     thankYou = $('.thank-you'),
+    tooltip = $('#tooltip'),
     base64string;
 
 
@@ -27,6 +28,8 @@ export default class SubmitPhoto {
       currentPanel = getUrlParameter('panel') || 'noPanel';
 
       if (isValidEmail(userEmail)) {
+
+        tooltip.removeClass('show');
 
         let formData = {
           'action': 'update_user_submissions',
@@ -59,7 +62,7 @@ export default class SubmitPhoto {
       } else {
 
         // show tooltip
-
+        tooltip.addClass('show');
 
       }
 

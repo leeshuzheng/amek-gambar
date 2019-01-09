@@ -2,10 +2,6 @@
 $keyWidth: 75px;
 $keyHeight: $keyWidth * 1.25;
 
-.tippy-tooltip {
-  font-size: 15pt;
-}
-
 .keyboard {
   position: absolute;
   @include horizontal-center();
@@ -116,15 +112,16 @@ $keyHeight: $keyWidth * 1.25;
 
   #tooltip {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 165px;
-    padding: 5px 15px;
+    left: 0;
+    top: -50px;
+    padding: 10px 15px;
     background: black;
     border-radius: 5px;
     visibility: hidden;
     opacity: 0;
     transition: all .3s;
+
+    width: 65%;
 
     &.show {
       visibility: visible;
@@ -134,7 +131,7 @@ $keyHeight: $keyWidth * 1.25;
 
     span {
       color: white;
-      font-size: 14pt;
+      font-size: 20pt;
     }
   }
 

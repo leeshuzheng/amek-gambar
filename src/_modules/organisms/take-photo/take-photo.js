@@ -41,7 +41,7 @@ export default class TakePhoto {
 
       takePhotoCountdown.html('');
 
-      count = 31;
+      count = 21;
 
       countdownInterval = setInterval(countdown, 1000);
 
@@ -53,6 +53,7 @@ export default class TakePhoto {
       clearInterval(countdownInterval);
 
       takePhoto();
+
     });
 
     function takePhoto() {
