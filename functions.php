@@ -234,13 +234,13 @@ function twentynineteen_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	wp_enqueue_script( 'panel-js', get_theme_file_uri( '/scripts/main.js' ), array(), true );
+
 	wp_localize_script('panel-js', 'amekgambar', array(
 		'homeurl' => home_url(),
 		'ajaxurl' => admin_url('admin-ajax.php'),
 		'imgurl' => get_template_directory_uri() . '/img'
 	));
-
-	wp_enqueue_script( 'panel-js', get_theme_file_uri( '/scripts/main.js' ), array(), true );
 
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
@@ -425,8 +425,10 @@ function update_user_submissions() {
 			update_post_meta( $newPost, 'image_src', $image ); // create new post meta for meta key named 'image_src'
 		}
 
+		$imageUrl = save_image( $image, 'image' );
+
 		// send email
-		send_email($email);
+		send_email($email, $imageUrl);
 
 		echo wp_json_encode(array('success' => 1, 'id'=>$newPost));
 	}
@@ -500,10 +502,10 @@ function email($to, $sub, $msg, $header)
 	return $mailSuccess;
 }
 
-add_action( 'wp_ajax_nopriv_send_email', 'send_email' );
-add_action( 'wp_ajax_send_email', 'send_email' );
+// add_action( 'wp_ajax_nopriv_send_email', 'send_email' );
+// add_action( 'wp_ajax_send_email', 'send_email' );
 
-function send_email($email) {
+function send_email($email, $image) {
 
 	$headers = array('Content-Type: text/html; charset=UTF-8');
 
@@ -513,10 +515,13 @@ function send_email($email) {
 
 	$msg = '<span>Greetings from The Peranakan Museum,</span>';
 	$msg .= $break;
-	$msg .= '<span>You are a step closer to winning your dream vacation!</span>';
+	$msg .= '<span>Thank you for your submission. Here is your photo:</span>';
 	$msg .= $break;
-	$msg .= '<span>Stay tuned and good Luck!</span>';
+	$msg .= '<img src="' . $image . '" style="width: 450px" />';
+	$msg .= $break;
+	$msg .= '<span>Post it on your social media accounts to stand a chance to win!</span>';
 	$msg .= '<br><br><br>';
+
 
 	return email($email, $subject, $msg, $headers); // can add $attachment as last param
 }
@@ -574,3 +579,38 @@ array(
 	'can_export' => true, // Allows export in Tools > Export
 	'menu_icon' => 'dashicons-tablet',
 ));
+
+/**
+ * Save the image on the server.
+ */
+function save_image( $base64_img, $title ) {
+
+	// Upload dir.
+	$upload_dir  = wp_upload_dir();
+	$upload_path = str_replace( '/', DIRECTORY_SEPARATOR, $upload_dir['path'] ) . DIRECTORY_SEPARATOR;
+
+	$img             = str_replace( 'data:image/png;base64,', '', $base64_img );
+	$img             = str_replace( ' ', '+', $img );
+	$decoded         = base64_decode( $img );
+	$filename        = $title . '.png';
+	$file_type       = 'image/png';
+	$hashed_filename = md5( $filename . microtime() ) . '_' . $filename;
+
+	// Save the image in the uploads directory.
+	$upload_file = file_put_contents( $upload_path . $hashed_filename, $decoded );
+
+	$attachment = array(
+		'post_mime_type' => $file_type,
+		'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $hashed_filename ) ),
+		'post_content'   => '',
+		'post_status'    => 'inherit',
+		'guid'           => $upload_dir['url'] . '/' . basename( $hashed_filename )
+	);
+
+	$attach_id = wp_insert_attachment( $attachment, $upload_dir['path'] . '/' . $hashed_filename );
+
+	$imageSrc = wp_get_attachment_url($attach_id);
+
+	return $imageSrc;
+
+}

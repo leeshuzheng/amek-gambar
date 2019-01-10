@@ -71,7 +71,7 @@
   </div>
   <div class="take-photo page">
     <div class="take-photo__back"><a href="#">BACK TO<span>CHOOSING FRAME</span></a></div>
-    <div class="take-photo__samples"><span>ORIGINAL</span><img src="<?php echo get_template_directory_uri(); ?>/images/1person.png" data-show="1" class="take-photo__sample"><img src="<?php echo get_template_directory_uri(); ?>/images/2persons.png" data-show="2" class="take-photo__sample"><img src="<?php echo get_template_directory_uri(); ?>/images/3persons.png" data-show="3-4" class="take-photo__sample"><img src="<?php echo get_template_directory_uri(); ?>/images/4persons.png" data-show="5" class="take-photo__sample">
+    <div class="take-photo__samples"><span>MATCH THIS ORIGINAL</span><img src="<?php echo get_template_directory_uri(); ?>/images/1person.png" data-show="1" class="take-photo__sample"><img src="<?php echo get_template_directory_uri(); ?>/images/2persons.png" data-show="2" class="take-photo__sample"><img src="<?php echo get_template_directory_uri(); ?>/images/3persons.png" data-show="3-4" class="take-photo__sample"><img src="<?php echo get_template_directory_uri(); ?>/images/4persons.png" data-show="5" class="take-photo__sample">
     </div>
     <div class="take-photo__camera">
       <div data-show="1" class="take-photo__frame"><img src="<?php echo get_template_directory_uri(); ?>/images/frames/1.png"></div>
@@ -161,6 +161,7 @@
         THANK YOU<span>FOR TAKING PART!</span>
       </h1>
     </div>
+    <button class="thank-you__restart">TRY AGAIN</button>
     <div class="thank-you__instructions">
       <p>Upload your portrait onto Instagram with <br>#OutdoTheOriginal and stand a chance to<br>win *insert prize/copy here</p>
     </div>

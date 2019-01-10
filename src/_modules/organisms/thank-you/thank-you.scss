@@ -1,6 +1,24 @@
 // thank-you styles
 .thank-you {
 
+  &__restart {
+    background-color: $beige;
+    border: 1px solid transparent;
+
+    font-family: 'Din Bold';
+    color: $brown;
+
+    font-size: 30pt;
+
+    padding: 25px;
+
+    position: absolute;
+    @include horizontal-center();
+    top: 655px;
+
+    outline: none;
+  }
+
   &__thanks {
     position: absolute;
 

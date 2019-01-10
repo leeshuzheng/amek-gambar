@@ -22,30 +22,33 @@ $height: 600px;
     margin-left: auto;
     margin-right: auto;
 
-    top: 697px;
+    top: 700px;
 
     overflow: hidden;
   }
 
   &__image {
     position: absolute;
+    text-align: center;
 
     img {
-      width: $width;
-      height: 520px;
-
-      transform: scaleX(-1) scale(1.29);
+      transform: scaleX(-1);
 
       position: absolute;
-      top: 44px;
+      left: 50px;
+
+      width: 800px;
+      height: 600px;
     }
   }
 
   &__frames {
     position: absolute;
 
-    width: $width;
+    width: 800px;
     height: $height;
+
+    left: 50px;
   }
 
   &__frame {
@@ -73,7 +76,7 @@ $height: 600px;
     position: absolute;
     @include horizontal-center();
 
-    top: 1308px;
+    top: 1310px;
 
     button {
       font-family: 'Din Bold';

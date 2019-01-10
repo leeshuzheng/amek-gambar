@@ -59,6 +59,8 @@ export default class SubmitPhoto {
 
         showPage(thankYou, '');
 
+        window.idleWait = 30000;
+
       } else {
 
         // show tooltip
