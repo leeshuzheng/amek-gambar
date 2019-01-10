@@ -102,7 +102,7 @@
     </div>
     <div class="keyboard">
       <div id="tooltip"><span>Please enter a valid email address</span></div>
-      <input type="email" placeholder="Email" class="keyboard__input">
+      <input type="email" spellcheck="false" placeholder="Email" class="keyboard__input">
       <div class="keyboard__buttons">
         <button class="clear btn"><span>CLEAR</span></button>
         <button class="submit btn"><span>SUBMIT</span></button>
